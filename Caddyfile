@@ -1,0 +1,11 @@
+:8888 {
+    log
+    root * \users\ContainerAdministrator
+    redir / /ui/
+
+    handle_path /ui/* {
+        reverse_proxy http://localhost:3000
+        respond /passwordcheck/ "OK"
+        import "C:\Users\Public\caddy\hashpass.txt"
+    }
+}
