@@ -49,6 +49,13 @@ RUN echo node .\src-gen\backend\main.js C:\Users\Public\tuflow --hostname=0.0.0.
 ENV SCOOP "C:\scoop"
 ENV SCOOP_HOME "C:\scoop\apps\scoop\current"
 
+# install CodeMeter runtime
+COPY codemeter_install.ps1 codemeter_install.ps1
+RUN powershell.exe .\codemeter_install.ps1
+
+# retrieve CodeMeter configuration script
+COPY codemeter_configure.ps1 codemeter_configure.ps1
+
 # set environment variable to look for the pulins in the correct directory
 ENV THEIA_DEFAULT_PLUGINS "local-dir:c:\Users\Public\galileo-ide\plugins"
 
