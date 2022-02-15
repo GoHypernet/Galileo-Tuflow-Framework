@@ -50,6 +50,7 @@ ENV SCOOP "C:\scoop"
 ENV SCOOP_HOME "C:\scoop\apps\scoop\current"
 
 # install CodeMeter runtime
+ENV CODEMETER_URL="https://www.wibu.com/support/user/user-software/file/download/8858.html?tx_wibudownloads_downloadlist%5BdirectDownload%5D=1&tx_wibudownloads_downloadlist%5BuseAwsS3%5D=0&cHash=1357cb7ae0883c984f3d6b130dc16a96"
 COPY codemeter_install.ps1 codemeter_install.ps1
 RUN powershell.exe .\codemeter_install.ps1
 

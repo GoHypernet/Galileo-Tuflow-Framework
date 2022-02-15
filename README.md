@@ -22,6 +22,10 @@ variables `EXE_iDP` and `EXE_iSP` should be set to the desired version and used 
 these environment variables include the `-nmb` and `-nc` flags to ensure that GUI popup boxes do not stall the headless 
 session.
 
+In order to run realistic Tuflow models, a Tuflow license is required. This containerized framework embeds Wibu System's 
+CodeMeter service that the Tuflow executable uses to attest for appropriate licensing. The URL/IP address of the licensing 
+server is specified by the CODEMETERADDRESS environment variable. 
+
 This framework comes with a React-based IDE for interactive sessions. A password and username must be set via the 
 `PASSWORD` and `USERNAME` environment variables for authentication with the interactive session. The IDE is served on 
 port 3000 and the authenticated enpoint which reverse-proxies the app is on port 8888. 
@@ -44,11 +48,11 @@ This will build a Docker image called `tuflow` that contains the tuflow.exe runt
 ## Running
 
 The working directory of any Tuflow container created from the base image defined by this project's Dockerfile is set to 
-be `C:\Users\Public\tuflow`. The Tuflow executable and all requisite runtime libraries are included in the 
-`C:\exe\2018-03-AC\` folder. 
+be `C:\Users\Public\tuflow`. The Tuflow executables and all requisite runtime libraries are included in the 
+`C:\exe\*` subfolders. 
 
 Two environment variables are set for convenience: `EXE_iSP` and `EXE_iDP`. These environment variables contain the installation
 path of the single and double precision executables respectively.
 
 A runtime .bat file called `run_tuflow.bat` is used as the entrypoint for the container. This .bat file executes whatever .bat file 
-the user places in the wording directory and sets via the environment variable `TUFLOW_BAT`. 
+the user places in the working directory and sets via the environment variable `TUFLOW_BAT`. 

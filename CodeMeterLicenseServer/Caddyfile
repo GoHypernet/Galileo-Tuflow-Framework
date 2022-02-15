@@ -1,0 +1,16 @@
+:8888 {
+    log
+	redir / /ui/
+    redir /auth/portal /ui/
+	
+    import /etc/gatekeeper/auth.txt
+	
+    handle_path /codemeter/* {
+        reverse_proxy http://localhost:22350
+    }
+	
+	handle_path /webadmin/* {
+        reverse_proxy http://localhost:22352
+    }
+	
+}
