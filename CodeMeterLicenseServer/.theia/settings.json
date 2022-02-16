@@ -1,0 +1,23 @@
+{
+    "galileo.logo": "",
+    "galileo.title": "CodeMeter",
+    "galileo.description": "PERFECTION IN PROTECTION, LICENSING AND SECURITY",
+    "galileo.widget_label": "Wibu Portal",
+    "galileo.social_links": [
+        {
+    ],
+    "galileo.ui_components": [
+        {
+        "type": "custom",
+        "title": "Getting Started",
+        "content": [
+            {
+            "title": "🏡 Code Meter Endpoint",
+            "href": "/codemeter/",
+            "priority": 0
+            }
+        ]
+        },
+    ],
+    "workbench.colorTheme": "Galileo Dark"
+}

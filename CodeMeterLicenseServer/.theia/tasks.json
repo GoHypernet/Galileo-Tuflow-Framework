@@ -1,0 +1,26 @@
+{
+    "tasks": [
+        {
+            "id": "start-code-meter",
+            "label": "Start Code Meter",
+            "description": "Start the Code Meter process.",
+            "type": "shell",
+            "command": "tmux new -s codemeter /usr/sbin/CodeMeterLin -v -l -n+ || tmux a -t codemeter",
+            "icon": {
+                "prefix": "far",
+                "name": "play-circle"
+            }
+        },
+		{
+            "id": "start-web-admin",
+            "label": "Start Web Admin Portal",
+            "description": "Start web admin user portal.",
+            "type": "shell",
+            "command": "tmux new -s webadmin /usr/sbin/CmWebAdmin || tmux a -t webadmin",
+            "icon": {
+                "prefix": "fas",
+                "name": "download"
+            }
+        }
+    ]
+}
